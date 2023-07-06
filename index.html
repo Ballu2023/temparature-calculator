@@ -1,0 +1,43 @@
+<!docktype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>this is my webiste</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <h1>word counter</h1>
+<textarea id="textarea" cols="30" rows="10"></textarea>
+<p>
+    <span id="word">0</span> word cnad
+    <span id="char">0</span> character
+    </p>
+    
+    
+    <script>
+    var textarea = document.getElementById("textarea")
+    
+    textarea.addEventListener("input", function(){
+    var text = this.value
+    var words = text.length
+    document.getElementById("char").innerHTML = words;
+    
+        
+    text = text.trim()
+    var char = text.split(" ")
+    var character = char.filter(function(elm){
+    return elm != "";
+    })
+    document.getElementById("word").innerHTML = character.length;
+    
+    
+    })
+    
+    
+    </script>
+    
+    
+    
+    
+    </body>
+</html>
